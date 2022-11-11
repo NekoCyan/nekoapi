@@ -17,11 +17,11 @@ app.get('/api/neko', async (req, res) => {
             responseType: 'arraybuffer'
         });
         const ImageData = Buffer.from(res_.data, 'binary');
-        res.writeHead(200, {
-            'Content-Type': data.url.endsWith('.jpg') ? 'image/jpeg' : 'image/png',
-            'Content-Length': ImageData.length,
-        });
-        res.end(ImageData);
+        res.send(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="10000px" height="10000px">
+<foreignObject xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="10000" height="10000">
+<img src="data:${data.url.endsWith('.jpg') ? 'image/jpeg' : 'image/png'};base64,${ImageData.toString('base64')}">
+</foreignObject>
+</svg>`);
     } catch {
         res.redirect('image default url');
     }
