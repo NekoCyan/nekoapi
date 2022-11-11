@@ -13,7 +13,15 @@ app.get('/', (req, res) => {
 app.get('/api/neko', async (req, res) => {
     try {
         const { data } = await axios.get(apiNeko);
-        res.redirect(data.url);
+        const res_ = await axios.get(data.url, {
+            responseType: 'arraybuffer'
+        });
+        const ImageData = Buffer.from(res_.data, 'binary');
+        res.writeHead(200, {
+            'Content-Type': data.url.endsWith('.jpg') ? 'image/jpeg' : 'image/png',
+            'Content-Length': ImageData.length,
+        });
+        res.end(ImageData);
     } catch {
         res.redirect('image default url');
     }
