@@ -1,8 +1,8 @@
 # Neko-API
-API is powered by [nekos.life](https://nekos.life)
+API is powered by [nekos.life](https://nekos.life).
 
 # About
-I'm using this to redirect to neko image from main API (With Endpoint /neko).
+I'm using this get Neko Image from main API (With Endpoint [/img/neko](https://nekos.life/api/v2/img/neko)) with randomly url from endpoint.
 
-#### URL for Neko-API (to redirect to Neko Image)
+#### URL for Neko-API (to get Neko Image)
 This one: https://nekoapi.onrender.com/api/neko
