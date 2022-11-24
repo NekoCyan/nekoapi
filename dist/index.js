@@ -9,15 +9,14 @@ app.listen(PORT, () => {
 });
 
 function getRandomImageURL() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         axios
             .get('https://nekos.life/api/v2/img/neko')
             .then((res) => {
                 resolve(res.data.url);
             })
             .catch((e) => {
-                console.log(e.message);
-                resolve('');
+                reject(e.message);
             });
     });
 }
