@@ -6,3 +6,6 @@ I'm using this get Neko Image from main API (With Endpoint [/img/neko](https://n
 
 #### URL for Neko-API (to get Neko Image)
 This one: https://nekoapi.onrender.com/api/neko
+
+# Special Thanks
+[@aiko-chan-ai](https://github.com/aiko-chan-ai)
